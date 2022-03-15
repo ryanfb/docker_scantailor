@@ -46,6 +46,10 @@ Leave this open and running. In another terminal:
 2. `make run-xquartz` launches Xquartz.
 3. `make run-scantailor-advanced` launches Scantailor Advanced.
 
+### "Early Access" builds
+
+There are also builds for the "Early Access" release of ScanTailor Advanced, as well as the latest git revision. You can use these by replacing `advanced` in the above instructions with `earlyaccess` and `head`, respectively.
+
 ## Why?
 
 There's no longer a Mac Homebrew package for ScanTailor and this was the "easiest" way to get both it and ScanTailor Advanced working.
