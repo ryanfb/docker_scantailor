@@ -9,7 +9,7 @@ build-scantailor-advanced:
 build-scantailor-earlyaccess:
 	docker build -f Dockerfile.earlyaccess .
 
-build-scantailor-earlyaccess:
+build-scantailor-head:
 	docker build -f Dockerfile.head .
 
 run-tunnel:
