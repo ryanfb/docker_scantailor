@@ -1,0 +1,18 @@
+FROM ubuntu:focal
+
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y gcc-7 g++-7 cmake libjpeg-dev libpng-dev libtiff5 libtiff5-dev libboost-test1.67-dev libboost-test1.67.0 qtbase5-dev libqt5svg5-dev qttools5-dev qttools5-dev-tools libqt5opengl5-dev libpthread-stubs0-dev
+
+ENV SCANTAILOR_RELEASE=3d1e74e6ace413733511086934a66f4e3f7a6027
+ENV CXX=g++-7
+
+RUN mkdir /scantailor-advanced
+ADD https://github.com/4lex4/scantailor-advanced/archive/${SCANTAILOR_RELEASE}.tar.gz /scantailor-advanced/scantailor.tar.gz
+RUN cd /scantailor-advanced && tar xzvf scantailor.tar.gz
+RUN cd /scantailor-advanced/scantailor-advanced-${SCANTAILOR_RELEASE} && mkdir build && cd build && cmake -G "Unix Makefiles" --build .. && make
+RUN cd /scantailor-advanced/scantailor-advanced-${SCANTAILOR_RELEASE}/build && make install
+
+VOLUME /data
+WORKDIR /data
+
+CMD ["scantailor"]
