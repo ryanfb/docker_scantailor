@@ -4,7 +4,7 @@ services:
   scantailor:
     build:
       context: .
-      dockerfil: Dockerfile.bookworm
+      dockerfile: Dockerfile.bookworm
     environment:
       DISPLAY: $DISPLAY
     volumes:

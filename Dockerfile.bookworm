@@ -6,7 +6,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
 		libjpeg-dev libpng-dev libtiff6 libtiff-dev \
 		libboost-test-dev qtbase5-dev libqt5svg5-dev \
 		qttools5-dev qttools5-dev-tools libqt5opengl5-dev \
-		libpthread-stubs0-dev
+		libpthread-stubs0-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 ENV SCANTAILOR_TAG=1.0.19
 
