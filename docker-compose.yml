@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  scantailor:
+    build:
+      context: .
+      dockerfile: Dockerfile.bookworm
+    environment:
+      DISPLAY: $DISPLAY
+    volumes:
+      - .data/input/:/data/input/
+      - ./data/output/:/data/output/
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ~/.Xauthority:/root/.Xauthority
